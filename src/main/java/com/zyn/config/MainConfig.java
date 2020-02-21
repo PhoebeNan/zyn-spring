@@ -7,15 +7,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 /**
- *    @ComponentScan.Filter(type = FilterType.ANNOTATION,value = {Controller.class, Service.class}),
- *         @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,classes = {BookDao.class}),
+
  * @author zhaoyanan
  * @create 2020-02-20-10:40
  */
 @Configuration //配置类=配置文件，告诉spring ioc容器这是一个配置类
 @ComponentScan(value = "com.zyn",includeFilters = {
-
-        @ComponentScan.Filter(type = FilterType.CUSTOM,classes = {MyTypeFilter.class}),
+        @ComponentScan.Filter(type = FilterType.ANNOTATION,value = {Controller.class, Service.class}),
+        @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,classes = {BookDao.class}),
+        //@ComponentScan.Filter(type = FilterType.CUSTOM,classes = {MyTypeFilter.class}),
 },useDefaultFilters = false)
 public class MainConfig {
 
