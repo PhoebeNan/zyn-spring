@@ -3,6 +3,7 @@ package com.zyn.bean;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  * @author zhaoyanan
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Person {
 
+    @Value("${person.name}")
     private String name;
 
     private Integer age;
